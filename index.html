@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Comics</title>
+    <meta name="description" content="Sam Wilson, Captain America (2025)">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Marvel_Logo.svg.png" alt="Marvel Logo">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html" class="Home1">Home</a></li>
+                <li><a href="comics.html" class="comic2">Comics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="new-this-week">
+        <h2>NEWS</h2>
+        <div class="news-carousel">
+            <div><img src="imags comics/captain-america-sot-1-feat.jpeg" alt="News 1"></div>
+            <div><img src="imags comics/wom2024001_invisiblewoman.jpg" alt="News 2"></div>
+            <div><img src="imags comics/REDHULK2025001_Cover-2000x1125.jpg" alt="News 3"></div>
+            <div><img src="imags comics/daredevil__born_again_soundtrack_cover__custom__v4_by_joancarrington14_diyz320-fullview.jpg" alt="News 4"></div>
+        </div>
+    </div>
+
+    <section class="comics-section">
+        <div class="comics-container" id="comicsContainer"></div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.news-carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 10000,
+                dots: true,
+                arrows: false
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const comics = [
+                { img: "imags comics/swcapa2025001_dc11.jpeg", title: "Sam Wilson, Captain America (2025)", link: "sam.html" },
+                { img: "imags comics/clean.jpg", title: "Daredevil Facsimile Edition (2025)", link: "dare.html" },
+                { img: "imags comics/clean (1).jpg", title: "Red Hulk (2025)", link: "red.html" }
+            ];
+            
+            const container = document.getElementById("comicsContainer");
+            
+            comics.forEach(comic => {
+                const comicDiv = document.createElement("div");
+                comicDiv.classList.add("comic");
+                comicDiv.innerHTML = `
+                    <a href="${comic.link}">
+                        <img src="${comic.img}" alt="${comic.title}">
+                    </a>
+                    <div class="comic-buttons">
+                        <a href="${comic.link}" class="button">${comic.title}</a>
+                    </div>
+                `;
+                container.appendChild(comicDiv);
+            });
+        });
+    </script>
+
+   <footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="images-.png" alt="Logo"> 
+        </div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">ABOUT</a></li>
+           
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <ul>
+               
+            </ul>
+        </div>
+
+        <div class="footer-social">
+            <h3>FOLLOW US</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Infinity Comics. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">License Agreement</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
